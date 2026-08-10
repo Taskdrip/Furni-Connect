@@ -10,6 +10,14 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: providers
+    description: Furniture and interior professionals
+  - name: projects
+    description: Customer project requests
+  - name: ai
+    description: AI room design flows
+  - name: dashboard
+    description: Dashboard summaries
 paths:
   /healthz:
     get:
@@ -24,6 +32,165 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /providers:
+    get:
+      operationId: listProviders
+      tags: [providers]
+      summary: Discover providers
+      parameters:
+        - in: query
+          name: search
+          schema: { type: string }
+        - in: query
+          name: city
+          schema: { type: string }
+        - in: query
+          name: category
+          schema: { type: string }
+        - in: query
+          name: verified
+          schema: { type: boolean }
+      responses:
+        "200":
+          description: Provider list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Provider"
+  /providers/{id}:
+    get:
+      operationId: getProvider
+      tags: [providers]
+      summary: Get provider profile
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: number }
+      responses:
+        "200":
+          description: Provider profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Provider"
+        "404":
+          description: Provider not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /projects:
+    get:
+      operationId: listProjects
+      tags: [projects]
+      summary: List customer projects
+      responses:
+        "200":
+          description: Project list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Project"
+    post:
+      operationId: createProject
+      tags: [projects]
+      summary: Create a project brief
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProjectInput"
+      responses:
+        "201":
+          description: Project created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+  /projects/{id}:
+    get:
+      operationId: getProject
+      tags: [projects]
+      summary: Get a project
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: number }
+      responses:
+        "200":
+          description: Project
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+        "404":
+          description: Project not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /ai/designs:
+    get:
+      operationId: listAiDesigns
+      tags: [ai]
+      summary: List saved AI designs
+      responses:
+        "200":
+          description: AI design list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AiDesign"
+    post:
+      operationId: generateAiDesign
+      tags: [ai]
+      summary: Generate an AI room design
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AiDesignInput"
+      responses:
+        "201":
+          description: Generated design
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AiDesign"
+  /dashboard/summary:
+    get:
+      operationId: getDashboardSummary
+      tags: [dashboard]
+      summary: Get customer dashboard summary
+      responses:
+        "200":
+          description: Dashboard summary
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashboardSummary"
+  /business/dashboard/summary:
+    get:
+      operationId: getBusinessDashboardSummary
+      tags: [dashboard]
+      summary: Get professional dashboard summary
+      responses:
+        "200":
+          description: Business dashboard summary
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BusinessDashboardSummary"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +200,161 @@ components:
           type: string
       required:
         - status
+    ErrorResponse:
+      type: object
+      properties:
+        error: { type: string }
+      required: [error]
+    Provider:
+      type: object
+      properties:
+        id: { type: number }
+        name: { type: string }
+        slug: { type: string }
+        category: { type: string }
+        city: { type: string }
+        state: { type: string }
+        rating: { type: number }
+        reviewCount: { type: number }
+        completedProjects: { type: number }
+        startingPrice: { type: number }
+        responseTime: { type: string }
+        verified: { type: boolean }
+        description: { type: string }
+        coverImage: { type: string }
+        avatarImage: { type: string }
+        styles:
+          type: array
+          items: { type: string }
+        services:
+          type: array
+          items: { type: string }
+        portfolio:
+          type: array
+          items: { type: string }
+      required:
+        - id
+        - name
+        - slug
+        - category
+        - city
+        - state
+        - rating
+        - reviewCount
+        - completedProjects
+        - startingPrice
+        - responseTime
+        - verified
+        - description
+        - coverImage
+        - avatarImage
+        - styles
+        - services
+        - portfolio
+    Project:
+      type: object
+      properties:
+        id: { type: number }
+        name: { type: string }
+        roomType: { type: string }
+        style: { type: string }
+        city: { type: string }
+        budget: { type: string }
+        status: { type: string }
+        progress: { type: number }
+        providerName: { type: ["string", "null"] }
+        createdAt: { type: string, format: date-time }
+      required: [id, name, roomType, style, city, budget, status, progress, providerName, createdAt]
+    ProjectInput:
+      type: object
+      properties:
+        name: { type: string, minLength: 1 }
+        roomType: { type: string }
+        style: { type: string }
+        city: { type: string }
+        budget: { type: string }
+        notes: { type: string }
+        imageUrl: { type: ["string", "null"] }
+      required: [name, roomType, style, city, budget]
+    AiDesign:
+      type: object
+      properties:
+        id: { type: number }
+        roomType: { type: string }
+        style: { type: string }
+        color: { type: string }
+        budget: { type: string }
+        originalImage: { type: string }
+        resultImage: { type: string }
+        summary: { type: string }
+        estimatedMin: { type: number }
+        estimatedMax: { type: number }
+        recommendations:
+          type: array
+          items:
+            $ref: "#/components/schemas/FurnitureRecommendation"
+        createdAt: { type: string, format: date-time }
+      required: [id, roomType, style, color, budget, originalImage, resultImage, summary, estimatedMin, estimatedMax, recommendations, createdAt]
+    FurnitureRecommendation:
+      type: object
+      properties:
+        name: { type: string }
+        price: { type: number }
+        quantity: { type: number }
+        image: { type: string }
+      required: [name, price, quantity, image]
+    AiDesignInput:
+      type: object
+      properties:
+        roomType: { type: string }
+        style: { type: string }
+        color: { type: string }
+        budget: { type: string }
+        originalImage: { type: string }
+        length: { type: ["number", "null"] }
+        width: { type: ["number", "null"] }
+        height: { type: ["number", "null"] }
+      required: [roomType, style, color, budget, originalImage]
+    DashboardSummary:
+      type: object
+      properties:
+        activeProjects: { type: number }
+        pendingQuotes: { type: number }
+        totalSpent: { type: number }
+        savedProfessionals: { type: number }
+        recentActivity:
+          type: array
+          items: { type: string }
+      required: [activeProjects, pendingQuotes, totalSpent, savedProfessionals, recentActivity]
+    BusinessDashboardSummary:
+      type: object
+      properties:
+        revenue: { type: number }
+        newLeads: { type: number }
+        activeProjects: { type: number }
+        pendingQuotes: { type: number }
+        conversionRate: { type: number }
+        rating: { type: number }
+        revenueSeries:
+          type: array
+          items:
+            $ref: "#/components/schemas/SeriesPoint"
+        pipeline:
+          type: array
+          items:
+            $ref: "#/components/schemas/PipelinePoint"
+      required: [revenue, newLeads, activeProjects, pendingQuotes, conversionRate, rating, revenueSeries, pipeline]
+    SeriesPoint:
+      type: object
+      properties:
+        label: { type: string }
+        value: { type: number }
+      required: [label, value]
+    PipelinePoint:
+      type: object
+      properties:
+        label: { type: string }
+        value: { type: number }
+        color: { type: string }
+      required: [label, value, color]
 

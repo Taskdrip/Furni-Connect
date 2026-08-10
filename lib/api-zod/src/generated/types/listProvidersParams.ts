@@ -6,6 +6,9 @@
  * OpenAPI spec version: 0.1.0
  */
 
-export interface HealthStatus {
-  status: string;
-}
+export type ListProvidersParams = {
+search?: string;
+city?: string;
+category?: string;
+verified?: boolean;
+};

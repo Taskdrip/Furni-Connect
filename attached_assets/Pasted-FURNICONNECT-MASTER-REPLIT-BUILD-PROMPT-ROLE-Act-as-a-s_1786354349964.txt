@@ -1,0 +1,1996 @@
+FURNICONNECT — MASTER REPLIT BUILD PROMPT
+
+ROLE
+
+Act as a senior full-stack SaaS architect, UI/UX designer, AI product engineer, marketplace developer and startup CTO.
+
+Build a production-quality, responsive web application called FurniConnect.
+
+FurniConnect is a Nigerian furniture and interior-design marketplace combined with a SaaS operating system for furniture makers, interior designers, showrooms, contractors and property developers.
+
+The application must feel like a premium technology startup — not a generic directory or template.
+
+The experience should combine the best characteristics of:
+
+- Houzz
+- Pinterest
+- modern AI design applications
+- Shopify
+- CRM SaaS platforms
+- premium real-estate marketplaces
+- modern Nigerian fintech interfaces
+
+The application must be mobile-first, extremely polished, fast, intuitive and visually impressive.
+
+---
+
+1. PRODUCT VISION
+
+FurniConnect helps customers:
+
+1. Discover furniture makers and interior designers.
+2. Find professionals near their location.
+3. Upload an empty room photo.
+4. Enter room dimensions.
+5. Select their preferred interior style.
+6. Enter their budget.
+7. Use AI to generate a complete furnished-room concept.
+8. See recommended furniture and decor.
+9. Find professionals who can execute the design.
+10. Request quotations.
+11. Compare providers.
+12. Hire a provider.
+13. Sign digital agreements.
+14. Pay deposits/milestones.
+15. Track the project.
+16. Review the provider after completion.
+
+For businesses, FurniConnect provides:
+
+- Business profile
+- Portfolio
+- Leads
+- CRM
+- Quote builder
+- Invoices
+- Digital contracts
+- Project management
+- Customer management
+- Payment tracking
+- Analytics
+- Team management
+- AI tools
+- Subscription management
+
+The long-term positioning is:
+
+«The operating system for Nigeria's furniture and interior-design industry.»
+
+---
+
+2. IMPORTANT DEVELOPMENT RULE
+
+Do NOT create a static demo.
+
+Build an actual working application with:
+
+- Functional navigation
+- Functional authentication
+- Functional dashboards
+- Functional forms
+- Functional image uploads
+- Functional database models
+- Functional search/filtering
+- Functional provider profiles
+- Functional project creation
+- Functional AI integration architecture
+- Functional subscription architecture
+- Functional admin dashboard
+- Responsive mobile navigation
+
+Where an external API key is required, create a clean environment-variable integration and a polished fallback/demo mode so the application still works without the API key.
+
+Use realistic sample data.
+
+Do not leave major buttons as dead links.
+
+---
+
+3. TECHNOLOGY
+
+Use a modern Replit-friendly full-stack architecture.
+
+Preferred:
+
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Node.js
+- Express or an appropriate modern backend
+- PostgreSQL
+- Prisma ORM
+- React Query/TanStack Query where appropriate
+- Zod validation
+- Secure authentication
+- Cloud/object storage abstraction for images
+
+Structure the application cleanly so it can later scale into a multi-tenant SaaS.
+
+Use environment variables for:
+
+- DATABASE_URL
+- AI API keys
+- Payment provider keys
+- Email provider
+- Storage provider
+- Maps/location services
+
+Do not hardcode secrets.
+
+---
+
+4. BRAND
+
+Brand name:
+
+FurniConnect
+
+Primary positioning:
+
+«Find it. Design it. Furnish it.»
+
+Alternative supporting message:
+
+«Turn any room into the space you've imagined.»
+
+Brand personality:
+
+- Premium
+- Modern
+- Trustworthy
+- Intelligent
+- African/Nigerian
+- Innovative
+- Professional
+- Warm
+- Aspirational
+
+Avoid an overly corporate appearance.
+
+Use elegant typography, large imagery, generous whitespace, premium cards and subtle animations.
+
+---
+
+5. HOMEPAGE
+
+Create an exceptional homepage.
+
+The homepage should immediately communicate:
+
+«FurniConnect is where people discover professionals and use AI to design their spaces.»
+
+---
+
+6. HERO SLIDER
+
+Create a full-width cinematic hero section occupying approximately 70–85% of the initial viewport.
+
+Use a professional animated hero slider.
+
+The hero must contain high-quality interior/furniture imagery.
+
+Use several slides.
+
+SLIDE 1 — AI ROOM DESIGN
+
+Background:
+
+Beautiful modern luxury Nigerian/African living room.
+
+Headline:
+
+«Turn an Empty Room Into Your Dream Space.»
+
+Subheadline:
+
+«Upload your room photo, choose your style and budget, and let FurniConnect create a complete furnishing concept in seconds.»
+
+Buttons:
+
+Design My Room
+
+Explore Professionals
+
+Visual:
+
+A floating AI design interface showing:
+
+Before → AI Transformation → Furnished Room.
+
+---
+
+SLIDE 2 — FIND PROFESSIONALS
+
+Background:
+
+Beautiful interior designer/furniture workshop.
+
+Headline:
+
+«Find Trusted Furniture Makers & Interior Designers Near You.»
+
+Subheadline:
+
+«Discover verified professionals, compare portfolios, request quotes and hire with confidence.»
+
+Buttons:
+
+Find Professionals
+
+Browse Projects
+
+---
+
+SLIDE 3 — COMPARE QUOTES
+
+Background:
+
+Luxury furnished apartment.
+
+Headline:
+
+«Get the Right Professional for Your Project.»
+
+Subheadline:
+
+«Tell us what you need and receive proposals from qualified furniture makers and interior designers.»
+
+Button:
+
+Start a Project
+
+---
+
+SLIDE 4 — MANAGE YOUR PROJECT
+
+Background:
+
+Modern home under installation.
+
+Headline:
+
+«From First Idea to Final Installation.»
+
+Subheadline:
+
+«Manage quotations, contracts, payments, production, delivery and installation in one place.»
+
+Button:
+
+See How It Works
+
+---
+
+SLIDE 5 — BUSINESS SaaS
+
+Background:
+
+Professional furniture showroom.
+
+Headline:
+
+«Grow Your Furniture Business With FurniConnect.»
+
+Subheadline:
+
+«Get discovered, manage leads, send professional quotations and manage projects from one powerful dashboard.»
+
+Buttons:
+
+For Professionals
+
+Start Free
+
+---
+
+7. HERO ANIMATIONS
+
+Use sophisticated animations.
+
+Do not make them distracting.
+
+Implement:
+
+- Smooth slide transitions
+- Ken Burns-style background image movement
+- Text fade/slide animations
+- Floating glass cards
+- Subtle image parallax
+- Animated statistics
+- Button hover effects
+- Cursor interactions where appropriate
+- Progress indicators
+- Autoplay slider
+- Pause on hover
+- Swipe on mobile
+
+Use Framer Motion or another appropriate animation library.
+
+Animations should feel like a premium SaaS product.
+
+---
+
+8. HERO AI INTERACTION
+
+Add a floating AI design widget over the hero.
+
+Example:
+
+┌───────────────────────────────┐
+│ ✨ FurniConnect AI             │
+│                               │
+│ What are you designing?       │
+│                               │
+│ [ Living Room ▼ ]             │
+│                               │
+│ Budget                        │
+│ ₦1m — ₦3m                     │
+│                               │
+│ Style                         │
+│ [ Modern Luxury ]             │
+│                               │
+│       ✨ Design My Room        │
+└───────────────────────────────┘
+
+Clicking the button opens the AI Room Designer.
+
+---
+
+9. AI ROOM DESIGNER
+
+This must be one of the most impressive features of the application.
+
+Create a dedicated page:
+
+/ai-room-designer
+
+Title:
+
+«Imagine It. Design It. Live It.»
+
+Subtitle:
+
+«Upload a photo of your room and let AI transform it into a complete interior design concept.»
+
+---
+
+10. ROOM IMAGE UPLOAD
+
+Create a beautiful drag-and-drop upload interface.
+
+Allow:
+
+- JPG
+- JPEG
+- PNG
+- WEBP
+
+Maximum reasonable file size.
+
+Interface:
+
+«Drop your room photo here»
+
+or
+
+«Upload Room Image»
+
+Also allow:
+
+«Take a photo»
+
+on mobile where browser support permits.
+
+Display preview immediately.
+
+---
+
+11. ROOM DIMENSIONS
+
+Allow users to provide:
+
+Option A
+
+Upload room image only.
+
+Option B
+
+Enter dimensions.
+
+Fields:
+
+Length:
+
+[ 5.5 ] meters
+
+Width:
+
+[ 4.2 ] meters
+
+Height:
+
+[ 3.0 ] meters
+
+Also allow:
+
+«I don't know my exact measurements.»
+
+If the user doesn't know dimensions, the AI should still work using the image.
+
+---
+
+12. AI DESIGN OPTIONS
+
+After uploading the room, show:
+
+What would you like?
+
+Room type:
+
+- Living Room
+- Bedroom
+- Dining Room
+- Kitchen
+- Home Office
+- Children's Room
+- Hotel Room
+- Office
+- Restaurant
+- Other
+
+Style:
+
+- Modern
+- Minimalist
+- Luxury
+- Contemporary
+- Classic
+- Scandinavian
+- Industrial
+- African Contemporary
+- Japandi
+- Traditional
+- Custom
+
+Color preference:
+
+- Neutral
+- Warm
+- Cool
+- Earth tones
+- Dark
+- Bright
+- Custom
+
+Budget:
+
+- Under ₦500k
+- ₦500k–₦1m
+- ₦1m–₦3m
+- ₦3m–₦5m
+- ₦5m–₦10m
+- ₦10m+
+
+---
+
+13. AI GENERATION EXPERIENCE
+
+When the user clicks:
+
+«Generate My Room»
+
+Do NOT simply show a generic loading spinner.
+
+Create an immersive AI generation experience.
+
+Display:
+
+«✨ Analyzing your room...»
+
+Then:
+
+«📐 Understanding the space...»
+
+Then:
+
+«🎨 Applying your design style...»
+
+Then:
+
+«🛋 Selecting furniture...»
+
+Then:
+
+«💡 Designing lighting...»
+
+Then:
+
+«🌿 Adding finishing touches...»
+
+Then:
+
+«✨ Your room is ready.»
+
+Use an animated progress interface.
+
+---
+
+14. AI RESULT
+
+Create an impressive result page.
+
+Layout:
+
+LEFT:
+
+Original room photo.
+
+RIGHT:
+
+AI furnished room.
+
+Use:
+
+BEFORE / AFTER SLIDER
+
+Allow users to drag a vertical slider between:
+
+Original
+
+and
+
+AI Design
+
+This should feel extremely polished.
+
+---
+
+15. AI DESIGN RESULT INFORMATION
+
+Under the generated room show:
+
+Design Summary
+
+«Modern luxury living room using warm neutral tones, contemporary furniture, layered lighting and natural textures.»
+
+Then:
+
+Recommended Furniture
+
+Cards:
+
+- L-shaped Sofa
+- TV Console
+- Center Table
+- Area Rug
+- Curtains
+- Accent Chair
+- Floor Lamp
+- Wall Art
+- Decorative Plants
+
+Each card should show:
+
+- Image
+- Item
+- Estimated price
+- Suggested quantity
+- Buy / Find Maker button
+
+---
+
+16. LOCALIZATION
+
+The AI result should understand Nigerian pricing.
+
+Use:
+
+₦
+
+instead of dollars.
+
+Example:
+
+Estimated furnishing budget:
+
+«₦2,350,000 – ₦2,850,000»
+
+Allow users to switch currency later.
+
+---
+
+17. "BUILD THIS ROOM FOR ME"
+
+This should be a major CTA.
+
+After the AI result:
+
+Like this design?
+
+«Let a professional bring it to life.»
+
+Buttons:
+
+Find Professionals
+
+Request Quotes
+
+The platform should convert the AI-generated concept into a project brief.
+
+Automatically populate:
+
+- Room type
+- Style
+- Estimated budget
+- Furniture requirements
+- Uploaded image
+- AI design image
+- Dimensions
+- Customer notes
+
+Then allow:
+
+«Send to Professionals»
+
+---
+
+18. SMART PROVIDER MATCHING
+
+Create an intelligent matching system.
+
+Rank providers based on:
+
+- Location
+- Service category
+- Style
+- Budget
+- Portfolio similarity
+- Rating
+- Completed projects
+- Response time
+- Availability
+- Verification status
+
+Display:
+
+Best Matches For Your Project
+
+Provider cards should contain:
+
+- Company name
+- Logo
+- Cover image
+- Rating
+- Verified badge
+- Location
+- Starting price
+- Completed projects
+- Portfolio
+- Response time
+- CTA
+
+Buttons:
+
+View Profile
+
+Request Quote
+
+---
+
+19. MARKETPLACE
+
+Create:
+
+/professionals
+
+Sections:
+
+Furniture Makers
+
+Interior Designers
+
+Showrooms
+
+Kitchen Specialists
+
+Wardrobe Specialists
+
+Decorators
+
+Lighting Specialists
+
+Flooring
+
+Curtains & Blinds
+
+Renovation Contractors
+
+Search bar:
+
+«Search furniture makers, interior designers, services...»
+
+Filters:
+
+- Location
+- Category
+- Budget
+- Rating
+- Verified
+- Style
+- Availability
+
+---
+
+20. PROFESSIONAL PROFILE
+
+Create premium profile pages.
+
+Example:
+
+ABC Furniture & Interiors
+
+⭐ 4.9
+
+✓ Verified Business
+
+Lagos, Nigeria
+
+About
+
+Services
+
+Portfolio
+
+Products
+
+Reviews
+
+Completed Projects
+
+Pricing
+
+Availability
+
+Contact
+
+CTA:
+
+Request a Quote
+
+Secondary:
+
+WhatsApp
+
+Save
+
+---
+
+21. REQUEST QUOTE WORKFLOW
+
+Create a multi-step project form.
+
+Step 1:
+
+Project type.
+
+Step 2:
+
+Location.
+
+Step 3:
+
+Budget.
+
+Step 4:
+
+Requirements.
+
+Step 5:
+
+Upload images.
+
+Step 6:
+
+Deadline.
+
+Step 7:
+
+Select professionals.
+
+Step 8:
+
+Submit.
+
+Show progress:
+
+1 2 3 4 5 6 7 8
+
+---
+
+22. CUSTOMER DASHBOARD
+
+Create:
+
+/dashboard
+
+Sidebar:
+
+Dashboard
+
+My Projects
+
+My Quotes
+
+Saved Professionals
+
+Messages
+
+AI Designs
+
+Payments
+
+Reviews
+
+Settings
+
+Dashboard cards:
+
+Active Projects
+
+Pending Quotes
+
+Total Spent
+
+Saved Professionals
+
+---
+
+23. CUSTOMER PROJECT PAGE
+
+Display:
+
+Project name
+
+Project budget
+
+Provider
+
+Status
+
+Timeline
+
+Payments
+
+Documents
+
+Messages
+
+Files
+
+Tasks
+
+Progress percentage
+
+Timeline:
+
+Quote
+
+Contract
+
+Deposit
+
+Design
+
+Production
+
+Quality Check
+
+Delivery
+
+Installation
+
+Completed
+
+---
+
+24. PROFESSIONAL SaaS DASHBOARD
+
+Create:
+
+/business/dashboard
+
+Premium SaaS interface.
+
+Sidebar:
+
+Overview
+
+Leads
+
+Customers
+
+Quotes
+
+Invoices
+
+Projects
+
+Portfolio
+
+Products
+
+Messages
+
+Reviews
+
+Team
+
+Analytics
+
+Billing
+
+Settings
+
+---
+
+25. PROFESSIONAL DASHBOARD
+
+Show:
+
+Revenue
+
+₦8,450,000
+
+New Leads
+
+34
+
+Active Projects
+
+8
+
+Pending Quotes
+
+12
+
+Conversion Rate
+
+38%
+
+Customer Rating
+
+4.8
+
+Charts:
+
+- Revenue
+- Leads
+- Quote conversion
+- Project status
+
+Use attractive but simple charts.
+
+---
+
+26. LEAD MANAGEMENT
+
+Create CRM pipeline:
+
+NEW
+
+↓
+
+CONTACTED
+
+↓
+
+QUOTE SENT
+
+↓
+
+NEGOTIATION
+
+↓
+
+WON
+
+↓
+
+PROJECT
+
+↓
+
+COMPLETED
+
+Allow drag-and-drop Kanban.
+
+---
+
+27. QUOTE BUILDER
+
+Create a professional quote builder.
+
+Fields:
+
+Customer
+
+Project
+
+Items
+
+Quantity
+
+Unit Price
+
+Discount
+
+Deposit
+
+Payment schedule
+
+Delivery date
+
+Notes
+
+Terms
+
+Automatically calculate totals.
+
+Button:
+
+Generate Quote
+
+Then:
+
+Send to Customer
+
+---
+
+28. DIGITAL CONTRACT
+
+Allow a quote to become a contract.
+
+Generate:
+
+Project Agreement
+
+Customer information
+
+Provider information
+
+Project description
+
+Items
+
+Price
+
+Payment milestones
+
+Delivery date
+
+Terms
+
+Signatures
+
+Status:
+
+Pending Signature
+
+Signed
+
+Cancelled
+
+---
+
+29. PROJECT MANAGEMENT
+
+Businesses can create stages:
+
+Planning
+
+Design
+
+Materials
+
+Production
+
+Quality Control
+
+Delivery
+
+Installation
+
+Completed
+
+Allow:
+
+- Tasks
+- Deadlines
+- Files
+- Comments
+- Customer updates
+- Internal notes
+
+---
+
+30. BUSINESS WEBSITE BUILDER
+
+Each provider should automatically receive a public profile/mini-site.
+
+Example:
+
+/business/abc-furniture
+
+Include:
+
+Hero
+
+Portfolio
+
+Services
+
+Products
+
+Reviews
+
+About
+
+Contact
+
+Quote request
+
+Allow premium users to eventually connect:
+
+custom domains.
+
+---
+
+31. ADMIN DASHBOARD
+
+Create:
+
+/admin
+
+Admin can manage:
+
+Users
+
+Businesses
+
+Providers
+
+Verification
+
+Projects
+
+Quotes
+
+Payments
+
+Subscriptions
+
+Reviews
+
+Reports
+
+Categories
+
+Locations
+
+Featured listings
+
+AI usage
+
+System settings
+
+---
+
+32. SAAS MONETIZATION
+
+Implement subscription architecture.
+
+Plans:
+
+FREE
+
+₦0/month
+
+- Basic profile
+- Limited portfolio
+- Basic enquiries
+
+PROFESSIONAL
+
+₦15,000/month
+
+- Unlimited portfolio
+- CRM
+- Quotes
+- Invoices
+- Analytics
+- More leads
+
+BUSINESS
+
+₦35,000/month
+
+- Everything in Professional
+- Team members
+- Projects
+- Contracts
+- Payment tracking
+- Advanced analytics
+- Automation
+
+ENTERPRISE
+
+Custom pricing
+
+- White-label
+- API
+- Advanced integrations
+- Dedicated support
+- Custom workflows
+
+These prices must be configurable from the admin dashboard.
+
+---
+
+33. MONETIZATION FEATURES
+
+Build architecture for:
+
+- SaaS subscriptions
+- Featured listings
+- Sponsored providers
+- Lead fees
+- Transaction fees
+- Premium verification
+- AI credits
+- White-label subscriptions
+- Enterprise plans
+
+Do not hard-code the business logic so these can be changed later.
+
+---
+
+34. PAYMENT ARCHITECTURE
+
+Prepare integrations for:
+
+- Paystack
+- Flutterwave
+- Stripe
+
+Use an abstraction layer.
+
+Do not tightly couple business logic to one payment provider.
+
+Support:
+
+- Subscription payments
+- Project payments
+- Deposits
+- Milestones
+- Invoices
+- Refunds
+- Transaction records
+
+Use environment variables.
+
+---
+
+35. AI ARCHITECTURE
+
+Create a modular AI service.
+
+Possible capabilities:
+
+AI Room Designer
+
+Image → furnished design.
+
+AI Interior Assistant
+
+Text → recommendations.
+
+AI Budget Planner
+
+Budget → furnishing plan.
+
+AI Provider Matching
+
+Project → recommended providers.
+
+AI Quote Assistant
+
+Project description → suggested quote structure.
+
+AI Marketing Assistant
+
+Business profile → social media content.
+
+Create interfaces so AI providers can be swapped later.
+
+If an image-generation API is unavailable, implement a polished demo mode using supplied/generated sample room transformations and clearly structure the code so a real image-generation provider can be connected later.
+
+---
+
+36. IMPORTANT AI SAFETY/UX RULE
+
+Never tell users that an AI-generated room is an exact architectural representation.
+
+Display:
+
+«AI concept — measurements, structural requirements and final specifications should be verified by a qualified professional.»
+
+---
+
+37. LOCATION FEATURES
+
+Support Nigerian locations.
+
+Initial cities:
+
+- Lagos
+- Abuja
+- Port Harcourt
+- Ibadan
+- Benin City
+- Enugu
+- Kano
+- Kaduna
+
+Allow providers to specify:
+
+- City
+- State
+- Service areas
+
+Future:
+
+GPS/map-based discovery.
+
+---
+
+38. SEARCH ENGINE OPTIMIZATION
+
+Build SEO-friendly pages.
+
+Examples:
+
+/furniture-makers/lagos
+
+/interior-designers/lagos
+
+/furniture-makers/lekki
+
+/interior-designers/ikeja
+
+/interior-designers/abuja
+
+Create metadata dynamically.
+
+Business pages should be indexable.
+
+---
+
+39. MOBILE EXPERIENCE
+
+Mobile is extremely important.
+
+The application must work beautifully on:
+
+- Android
+- iPhone
+- Tablets
+- Desktop
+
+Use:
+
+- Bottom navigation where appropriate
+- Large touch targets
+- Mobile-friendly upload
+- Swipeable galleries
+- Responsive dashboards
+- Sticky CTA buttons
+
+---
+
+40. DESIGN SYSTEM
+
+Use a premium neutral design.
+
+Suggested palette:
+
+Background:
+
+Warm off-white / white
+
+Text:
+
+Deep charcoal
+
+Accent:
+
+Elegant green/teal or sophisticated terracotta/gold accent.
+
+Do not overuse colors.
+
+Cards:
+
+Rounded corners
+
+Soft shadows
+
+Subtle borders
+
+Buttons:
+
+Strong primary CTA
+
+Smooth hover animation
+
+Typography:
+
+Use a modern font such as Inter, Manrope, Plus Jakarta Sans or similar.
+
+---
+
+41. ANIMATIONS
+
+Use animations throughout the application, but keep them professional.
+
+Examples:
+
+- Page transitions
+- Card hover
+- Image zoom
+- Scroll reveal
+- Number counters
+- Skeleton loaders
+- Modal transitions
+- AI generation animations
+- Upload animations
+- Before/after slider
+- Progress indicators
+- Toast notifications
+- Dashboard chart animations
+
+Avoid excessive bouncing or childish animations.
+
+---
+
+42. LANDING PAGE SECTIONS
+
+After the hero:
+
+AI Room Designer
+
+"Your empty room is only the beginning."
+
+Show Before/After.
+
+CTA:
+
+Try AI Designer
+
+---
+
+Discover Professionals
+
+Show provider cards.
+
+CTA:
+
+Explore Professionals
+
+---
+
+How FurniConnect Works
+
+1. Upload
+2. Design
+3. Match
+4. Quote
+5. Build
+6. Enjoy
+
+---
+
+Popular Services
+
+Furniture
+
+Interior Design
+
+Kitchen
+
+Wardrobes
+
+Lighting
+
+Curtains
+
+Office Interiors
+
+---
+
+Featured Projects
+
+Large visual gallery.
+
+---
+
+For Professionals
+
+Headline:
+
+«Turn your craft into a growing digital business.»
+
+Features:
+
+Leads
+
+CRM
+
+Quotes
+
+Projects
+
+Payments
+
+Analytics
+
+CTA:
+
+Grow My Business
+
+---
+
+Customer Reviews
+
+Use realistic sample testimonials.
+
+---
+
+Cities
+
+Lagos
+
+Abuja
+
+Port Harcourt
+
+Ibadan
+
+etc.
+
+---
+
+CTA
+
+«Your dream space starts here.»
+
+Buttons:
+
+Design My Room
+
+Find a Professional
+
+---
+
+43. SAMPLE DATA
+
+Seed the database with realistic Nigerian sample businesses.
+
+Examples:
+
+- ModernCraft Interiors
+- Lagos Woodworks
+- UrbanNest Furniture
+- Elite Living Interiors
+- Abuja Home Studio
+- Signature Spaces
+- Oak & Stone Furniture
+- Heritage Interiors
+
+Use realistic Nigerian locations and naira pricing.
+
+Clearly mark sample/demo data internally.
+
+---
+
+44. AUTHENTICATION
+
+Support:
+
+Customer
+
+Professional
+
+Admin
+
+Registration fields should adapt based on account type.
+
+Professional onboarding:
+
+Business name
+
+Business category
+
+Location
+
+Phone
+
+Email
+
+Years of experience
+
+Services
+
+Portfolio
+
+Price range
+
+Description
+
+Verification documents where appropriate
+
+---
+
+45. NOTIFICATIONS
+
+Create notification infrastructure for:
+
+- New lead
+- New quote
+- Quote accepted
+- Contract signed
+- Payment received
+- Project milestone
+- New message
+- Review received
+- Subscription renewal
+
+Use in-app notifications first.
+
+Prepare architecture for email/SMS/WhatsApp.
+
+---
+
+46. SECURITY
+
+Implement:
+
+- Secure password hashing
+- Authentication sessions/tokens
+- Role-based permissions
+- Tenant isolation
+- Input validation
+- File validation
+- Upload restrictions
+- Rate limiting
+- Secure API endpoints
+- Audit logging
+- No secrets in frontend
+- No exposed API keys
+
+---
+
+47. PERFORMANCE
+
+Optimize for Nigerian mobile networks.
+
+Use:
+
+- Image compression
+- Lazy loading
+- Responsive image sizes
+- Pagination
+- Skeleton loaders
+- Caching
+- Optimized database queries
+- Code splitting
+
+Do not load huge images unnecessarily.
+
+---
+
+48. ERROR HANDLING
+
+Every major workflow needs:
+
+- Loading state
+- Empty state
+- Error state
+- Success state
+
+Examples:
+
+"No professionals found"
+
+"Upload failed"
+
+"AI generation unavailable"
+
+"Payment failed"
+
+"Quote sent successfully"
+
+Make these states visually polished.
+
+---
+
+49. ADMIN CONFIGURATION
+
+Admin should be able to configure:
+
+- Subscription prices
+- Categories
+- Cities
+- Provider verification
+- Featured listings
+- Platform commission
+- Lead fees
+- AI limits
+- Promotions
+- Homepage content
+- Hero slides
+- FAQs
+
+Do not require developers to edit code for ordinary business configuration.
+
+---
+
+50. FUTURE FEATURES — PREPARE THE ARCHITECTURE
+
+Do not necessarily build all of these now, but ensure the architecture can support:
+
+- Furniture ecommerce
+- Inventory
+- Supplier marketplace
+- Procurement
+- Logistics
+- Installation scheduling
+- AR room visualization
+- 3D room design
+- AI floor-plan interpretation
+- Property developer procurement
+- Corporate furnishing
+- Hotel furnishing
+- White-label SaaS
+- Mobile apps
+- API marketplace
+
+---
+
+51. FINAL UX REQUIREMENT
+
+The website must immediately communicate three things:
+
+FOR CUSTOMERS
+
+«I can design my room and find someone to build it.»
+
+FOR PROFESSIONALS
+
+«I can get customers and run my business here.»
+
+FOR THE MARKET
+
+«This is the digital platform for furniture and interior design.»
+
+The homepage should not feel cluttered.
+
+The primary CTA should always be obvious.
+
+---
+
+52. PRIMARY USER FLOWS
+
+Implement these completely.
+
+FLOW A — AI DESIGN
+
+Homepage
+
+→ AI Room Designer
+
+→ Upload image
+
+→ Select room
+
+→ Select style
+
+→ Budget
+
+→ Generate
+
+→ Before/After
+
+→ Furniture recommendations
+
+→ Find Professionals
+
+→ Create Project
+
+---
+
+FLOW B — FIND PROFESSIONAL
+
+Homepage
+
+→ Search
+
+→ Filters
+
+→ Provider profile
+
+→ Portfolio
+
+→ Request Quote
+
+→ Project request
+
+→ Provider response
+
+→ Quote
+
+→ Accept
+
+---
+
+FLOW C — PROFESSIONAL
+
+Landing page
+
+→ Join as Professional
+
+→ Registration
+
+→ Business onboarding
+
+→ Upload portfolio
+
+→ Dashboard
+
+→ Receive lead
+
+→ Contact customer
+
+→ Create quote
+
+→ Customer accepts
+
+→ Project
+
+→ Payment
+
+→ Completion
+
+→ Review
+
+---
+
+53. QUALITY BAR
+
+Before considering the build complete:
+
+Test:
+
+- Desktop
+- Mobile
+- Tablet
+- Authentication
+- Registration
+- Image upload
+- AI workflow
+- Search
+- Filters
+- Provider profiles
+- Project creation
+- Quote creation
+- Dashboard
+- Subscription architecture
+- Admin
+- Error handling
+
+Fix all obvious UI bugs.
+
+Ensure there are no:
+
+- broken links
+- placeholder buttons
+- overflowing layouts
+- unreadable text
+- console errors
+- missing loading states
+- missing mobile states
+
+---
+
+54. MOST IMPORTANT FEATURE
+
+The AI Room Designer should be the visual centerpiece of FurniConnect.
+
+The user should be able to go from:
+
+EMPTY ROOM
+
+↓
+
+UPLOAD PHOTO
+
+↓
+
+CHOOSE STYLE + BUDGET
+
+↓
+
+AI DESIGN
+
+↓
+
+FURNISHED ROOM
+
+↓
+
+SEE FURNITURE
+
+↓
+
+SEE ESTIMATED COST
+
+↓
+
+FIND LOCAL PROFESSIONALS
+
+↓
+
+REQUEST QUOTES
+
+↓
+
+BUILD THE ROOM
+
+This is the core product experience.
+
+---
+
+55. FINAL BUILD INSTRUCTION
+
+Build the application now.
+
+Do not stop at a wireframe.
+
+Create the complete responsive interface, database schema, routes, reusable components, API structure, authentication, dashboards, marketplace, AI room designer, sample data and admin foundation.
+
+Prioritize the AI Room Designer, marketplace discovery and professional SaaS dashboard.
+
+Use polished animations and premium visual design.
+
+Make the product look like a venture-backed startup that is ready to show investors and real customers.
+
+The result should feel like a combination of:
+
+AI interior design + furniture marketplace + professional services marketplace + CRM + project management + payments SaaS.
+
+The final product should be called:
+
+FurniConnect
+
+Tagline:
+
+Find it. Design it. Furnish it.

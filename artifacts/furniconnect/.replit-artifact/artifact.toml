@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "FurniConnect"
+description = "A premium Nigerian furniture and interior-design marketplace with an AI room designer, trusted professional discovery, project requests, and a business operations workspace."
+version = "1.0.0"
+id = "artifacts/furniconnect"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22612
+
+[services.development]
+run = "pnpm --filter @workspace/furniconnect run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/furniconnect", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/furniconnect/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22612"
+BASE_PATH = "/"
