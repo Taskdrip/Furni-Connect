@@ -1,6 +1,6 @@
-# [Project name]
+# BobTech Furnitures
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+BobTech Furnitures is a Nigerian furniture and interior-design marketplace that connects customers with trusted makers and professionals, with an AI-assisted room design flow.
 
 ## Run & Operate
 
@@ -22,19 +22,29 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/furniconnect/src/App.tsx` — customer-facing marketplace, AI room designer, dashboards, auth demo, and shared header/footer.
+- `artifacts/furniconnect/src/index.css` — BobTech visual tokens, typography, responsive utilities, and motion.
+- `artifacts/furniconnect/public/brand-logo.png` — supplied BobTech Furnitures logo used in the web app.
+- `artifacts/api-server/src/routes/` — Express API routes.
+- `lib/db/src/schema/` — Drizzle/PostgreSQL schema source of truth.
+- `lib/api-spec/` — OpenAPI contract used to generate the client and Zod schemas.
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The existing pnpm workspace and React/Vite + Express + Drizzle stack are retained to keep imported project conventions intact.
+- The homepage hero uses local furniture imagery and a client-side accessible slider so the first impression remains fast and works without an external image service.
+- The supplied BobTech logo is copied into the frontend public assets and is rendered by the shared brand component so header, footer, workspace, and auth surfaces stay consistent.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Customers can browse and filter Nigerian furniture and interior professionals, view provider profiles, upload a room photo, generate an AI design concept, turn a concept into a project, and monitor project summaries. Professionals have a business workspace with leads, revenue, pipeline, and focus views.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Brand the web app as **BobTech Furnitures**.
+- Use the supplied BobTech logo in the header and footer.
+- Keep the visual language professional, sleek, warm, and grounded in the logo's brown and gold tones.
+- Keep a feature-oriented hero slider on the homepage.
 
 ## Gotchas
 

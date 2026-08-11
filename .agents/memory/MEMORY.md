@@ -1,0 +1,1 @@
+- [Managed artifact runtime](managed-artifact-runtime.md) — Replit artifact workflows provide PORT and BASE_PATH; standalone Vite builds need those values explicitly.
