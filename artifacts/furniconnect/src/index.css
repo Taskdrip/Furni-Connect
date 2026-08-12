@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -76,8 +76,8 @@
   --chart-3: 18 43% 48%;
   --chart-4: 198 25% 44%;
   --chart-5: 112 20% 42%;
-  --app-font-sans: 'Sora', sans-serif;
-  --app-font-serif: 'Instrument Serif', Georgia, serif;
+  --app-font-sans: 'DM Sans', Arial, sans-serif;
+  --app-font-serif: 'DM Sans', Arial, sans-serif;
   --app-font-mono: 'Space Mono', monospace;
   --radius: 1rem;
   --shadow-sm: 0 2px 12px hsl(25 48% 22% / 0.07);
@@ -138,8 +138,9 @@
 }
 
 @layer utilities {
-  .font-display { font-family: var(--app-font-serif); }
+  .font-display { font-family: var(--app-font-serif); font-style: normal; font-weight: 700; }
   .font-mono-app { font-family: var(--app-font-mono); }
+  em { font-style: normal; }
   .text-balance { text-wrap: balance; }
   .bg-canvas { background: hsl(var(--background)); }
   .surface-grid {
