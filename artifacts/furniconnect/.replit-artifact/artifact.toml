@@ -9,7 +9,7 @@ router = "path"
 [[services]]
 name = "web"
 paths = [ "/" ]
-localPort = 22612
+localPort = 5173
 
 [services.development]
 run = "pnpm --filter @workspace/furniconnect run dev"
