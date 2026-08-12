@@ -4,6 +4,7 @@ BobTech Furnitures is a Nigerian furniture and interior-design marketplace that 
 
 ## Run & Operate
 
+- The `FurniConnect Preview` workflow runs the frontend preview at the root URL.
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
