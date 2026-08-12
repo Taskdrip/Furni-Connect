@@ -2,13 +2,19 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ButtonHTMLAttributes, ElementType, ReactNode } from 'react';
 import { ArrowRight, ArrowUpRight, BarChart3, Bell, BriefcaseBusiness, Check, ChevronDown, ChevronLeft, CircleAlert, Clock3, Compass, FileImage, Filter, Heart, Home as HomeIcon, ImagePlus, Layers3, LayoutDashboard, LoaderCircle, LogIn, Menu, MessageCircle, Plus, Search, Settings2, ShieldCheck, Sparkles, Star, Upload, Users, X } from 'lucide-react';
-import { Link, Route, Switch, Router as WouterRouter, useLocation, useParams } from 'wouter';
+import { Link, Redirect, Route, Switch, Router as WouterRouter, useLocation, useParams } from 'wouter';
+import { ClerkProvider, SignedIn, SignedOut, SignOutButton, useAuth } from '@clerk/react';
+import { publishableKeyFromHost } from '@clerk/react/internal';
 import { useCreateProject, useGenerateAiDesign, useGetBusinessDashboardSummary, useGetDashboardSummary, useGetProject, useGetProvider, useListAiDesigns, useListProjects, useListProviders } from '@workspace/api-client-react';
 import { getGetProjectQueryKey, getGetProviderQueryKey, getListProjectsQueryKey, getListProvidersQueryKey } from '@workspace/api-client-react';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
+import Marketplace from '@/pages/marketplace';
+import CustomerPortal from '@/pages/customer-portal';
+import AdminMarketplace from '@/pages/admin-marketplace';
+import { SignInPage, SignUpPage } from '@/pages/auth-pages';
 
 const queryClient = new QueryClient();
 const naira = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN', maximumFractionDigits: 0 });
@@ -36,22 +42,20 @@ function Header() {
     <div className="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between px-5 lg:px-8">
       <Mark />
       <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+        <Link href="/marketplace" className={cn('text-sm transition-colors hover:text-primary', location.startsWith('/marketplace') && 'font-semibold text-primary')} data-testid="link-marketplace">Marketplace</Link>
         <Link href="/professionals" className={cn('text-sm transition-colors hover:text-primary', location.startsWith('/professionals') && 'font-semibold text-primary')} data-testid="link-find-professionals">Find professionals</Link>
         <Link href="/ai-room-designer" className={cn('text-sm transition-colors hover:text-primary', location === '/ai-room-designer' && 'font-semibold text-primary')} data-testid="link-ai-designer">AI room designer <span className="ml-1 rounded bg-accent/20 px-1.5 py-0.5 text-[10px] font-bold text-accent-foreground">NEW</span></Link>
         <Link href="/business/dashboard" className="text-sm transition-colors hover:text-primary" data-testid="link-for-business">For business</Link>
       </nav>
-      <div className="hidden items-center gap-3 md:flex">
-        <Link href="/sign-in" className="inline-flex min-h-10 items-center gap-2 rounded-full px-4 text-sm font-semibold hover:bg-muted" data-testid="link-sign-in"><LogIn size={16} /> Sign in</Link>
-         <Link href="/sign-up" className="inline-flex min-h-10 items-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:-translate-y-0.5 hover:shadow-lift" data-testid="link-sign-up">Join BobTech</Link>
-      </div>
+      <div className="hidden items-center gap-3 md:flex"><SignedOut><Link href="/sign-in" className="inline-flex min-h-10 items-center gap-2 rounded-full px-4 text-sm font-semibold hover:bg-muted" data-testid="link-sign-in"><LogIn size={16} /> Sign in</Link><Link href="/sign-up" className="inline-flex min-h-10 items-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:-translate-y-0.5 hover:shadow-lift" data-testid="link-sign-up">Join BobTech</Link></SignedOut><SignedIn><Link href="/dashboard" className="inline-flex min-h-10 items-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground">My dashboard</Link><SignOutButton><button className="rounded-full px-3 py-2 text-sm text-muted-foreground hover:bg-muted">Sign out</button></SignOutButton></SignedIn></div>
       <button type="button" className="rounded-full p-2 hover:bg-muted md:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu" data-testid="button-toggle-menu">{open ? <X /> : <Menu />}</button>
     </div>
     {open && <div className="animate-fade border-t border-border bg-background px-5 pb-5 pt-3 md:hidden">
       <div className="flex flex-col gap-1">
-        <Link href="/professionals" onClick={() => setOpen(false)} className="rounded-xl px-3 py-3 text-sm font-medium hover:bg-muted" data-testid="mobile-link-professionals">Find professionals</Link>
+        <Link href="/marketplace" onClick={() => setOpen(false)} className="rounded-xl px-3 py-3 text-sm font-medium hover:bg-muted" data-testid="mobile-link-marketplace">Marketplace</Link><Link href="/professionals" onClick={() => setOpen(false)} className="rounded-xl px-3 py-3 text-sm font-medium hover:bg-muted" data-testid="mobile-link-professionals">Find professionals</Link>
         <Link href="/ai-room-designer" onClick={() => setOpen(false)} className="rounded-xl px-3 py-3 text-sm font-medium hover:bg-muted" data-testid="mobile-link-designer">AI room designer</Link>
         <Link href="/business/dashboard" onClick={() => setOpen(false)} className="rounded-xl px-3 py-3 text-sm font-medium hover:bg-muted" data-testid="mobile-link-business">For business</Link>
-        <div className="mt-2 flex gap-2 border-t border-border pt-3"><Link href="/sign-in" className="flex-1"><Button variant="outline" className="w-full">Sign in</Button></Link><Link href="/sign-up" className="flex-1"><Button className="w-full">Join</Button></Link></div>
+        <div className="mt-2 flex gap-2 border-t border-border pt-3"><SignedOut><Link href="/sign-in" className="flex-1"><Button variant="outline" className="w-full">Sign in</Button></Link><Link href="/sign-up" className="flex-1"><Button className="w-full">Join</Button></Link></SignedOut><SignedIn><Link href="/dashboard" className="flex-1"><Button className="w-full">My dashboard</Button></Link><SignOutButton><Button variant="outline" className="flex-1">Sign out</Button></SignOutButton></SignedIn></div>
       </div>
     </div>}
   </header>;
